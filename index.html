@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>似合う服・髪型診断</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>✨ 似合う服・髪型診断 ✨</h1>
+
+    <p>質問に答えて診断してみよう！</p>
+
+    <label>顔の形</label>
+    <select id="face">
+        <option value="丸顔">丸顔</option>
+        <option value="面長">面長</option>
+        <option value="卵型">卵型</option>
+        <option value="ベース型">ベース型</option>
+    </select>
+
+    <label>肌タイプ</label>
+    <select id="skin">
+        <option value="イエベ">イエベ</option>
+        <option value="ブルベ">ブルベ</option>
+    </select>
+
+    <button onclick="diagnosis()">診断する</button>
+
+    <div id="result"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
