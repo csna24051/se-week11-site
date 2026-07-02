@@ -14,7 +14,8 @@
 
     <p>質問に答えて診断してみよう！</p>
 
-    <label>顔の形</label>
+    <!-- 顔の形 -->
+    <label for="face">顔の形</label>
     <select id="face">
         <option value="丸顔">丸顔</option>
         <option value="面長">面長</option>
@@ -22,10 +23,52 @@
         <option value="ベース型">ベース型</option>
     </select>
 
-    <label>肌タイプ</label>
+    <!-- 肌タイプ -->
+    <label for="skin">肌タイプ</label>
     <select id="skin">
         <option value="イエベ">イエベ</option>
         <option value="ブルベ">ブルベ</option>
+    </select>
+
+    <!-- 目の色 -->
+    <label for="eye">目の色</label>
+    <select id="eye">
+        <option value="黒">黒</option>
+        <option value="茶色">茶色</option>
+    </select>
+
+    <!-- 髪の色 -->
+    <label for="hairColor">髪の色</label>
+    <select id="hairColor">
+        <option value="黒">黒</option>
+        <option value="茶色">茶色</option>
+        <option value="金">金</option>
+    </select>
+
+    <!-- 髪の長さ -->
+    <label for="hairLength">髪の長さ</label>
+    <select id="hairLength">
+        <option value="ショート">ショート</option>
+        <option value="ミディアム">ミディアム</option>
+        <option value="ロング">ロング</option>
+    </select>
+
+    <!-- 普段のファッション -->
+    <label for="fashion">普段のファッション</label>
+    <select id="fashion">
+        <option value="カジュアル">カジュアル</option>
+        <option value="きれいめ">きれいめ</option>
+        <option value="韓国風">韓国風</option>
+        <option value="ストリート">ストリート</option>
+    </select>
+
+    <!-- なりたい雰囲気 -->
+    <label for="style">なりたい雰囲気</label>
+    <select id="style">
+        <option value="かわいい">かわいい</option>
+        <option value="かっこいい">かっこいい</option>
+        <option value="大人っぽい">大人っぽい</option>
+        <option value="ナチュラル">ナチュラル</option>
     </select>
 
     <button onclick="diagnosis()">診断する</button>
