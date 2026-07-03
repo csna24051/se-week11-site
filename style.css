@@ -1,51 +1,72 @@
+/* 全体 */
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #ffe6f2, #fffafc);
     font-family: "Yu Gothic", sans-serif;
+    background: linear-gradient(135deg, #ffe4ec, #fff7fb);
 }
 
+/* コンテナ */
 .container {
-    width: 420px;
+    width: 90%;
+    max-width: 500px;
     margin: 40px auto;
-    background: white;
-    border-radius: 20px;
+    background: #ffffff;
     padding: 30px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* タイトル */
 h1 {
     text-align: center;
-    color: #ff5c8d;
+    color: #ff4f8b;
+    margin-bottom: 10px;
 }
 
-p {
+/* サブタイトル */
+.subtitle {
     text-align: center;
-    color: gray;
+    color: #777;
+    margin-bottom: 30px;
 }
 
+/* ラベル */
 label {
     display: block;
-    margin-top: 15px;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-size: 16px;
     font-weight: bold;
+    color: #444;
 }
 
+/* セレクトボックス */
 select {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
+    padding: 12px;
     font-size: 16px;
+    border-radius: 12px;
+    border: 2px solid #ffd2e1;
+    background: #fffafc;
+    box-sizing: border-box;
+    transition: 0.3s;
 }
 
+select:focus {
+    border-color: #ff6fa5;
+    outline: none;
+}
+
+/* ボタン */
 button {
     width: 100%;
-    margin-top: 25px;
+    margin-top: 30px;
     padding: 15px;
-    background: #ff5c8d;
-    color: white;
     font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to right, #ff79a8, #ff4f8b);
     border: none;
     border-radius: 30px;
     cursor: pointer;
@@ -53,13 +74,52 @@ button {
 }
 
 button:hover {
-    background: #ff2d6f;
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(255, 79, 139, 0.4);
 }
 
+/* 診断結果 */
 #result {
-    margin-top: 30px;
+    margin-top: 35px;
+    background: #fff0f6;
+    border: 2px solid #ffd2e1;
+    border-radius: 20px;
     padding: 20px;
-    background: #fff0f5;
-    border-radius: 15px;
     line-height: 1.8;
+    color: #444;
+}
+
+/* 診断結果タイトル */
+#result h2 {
+    text-align: center;
+    color: #ff4f8b;
+    margin-top: 0;
+}
+
+/* 区切り線 */
+hr {
+    border: none;
+    border-top: 1px solid #ffc4d8;
+    margin: 20px 0;
+}
+
+/* 強調 */
+strong {
+    color: #ff4f8b;
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 16px;
+    }
 }

@@ -3,67 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>似合う服・髪型診断</title>
+    <title>似合う服・髪型診断アプリ</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div class="container">
-    <h1>✨ 似合う服・髪型診断 ✨</h1>
 
-    <p>質問に答えて診断してみよう！</p>
+    <h1>💖 似合う服・髪型診断 💖</h1>
+
+    <p class="subtitle">
+        10個の質問に答えて、あなたに似合うスタイルを診断します✨
+    </p>
 
     <!-- 顔の形 -->
-    <label for="face">顔の形</label>
+    <label for="face">😊 顔の形</label>
     <select id="face">
         <option value="丸顔">丸顔</option>
         <option value="面長">面長</option>
         <option value="卵型">卵型</option>
         <option value="ベース型">ベース型</option>
+        <option value="逆三角形">逆三角形</option>
     </select>
 
     <!-- 肌タイプ -->
-    <label for="skin">肌タイプ</label>
+    <label for="skin">🎨 肌タイプ</label>
     <select id="skin">
         <option value="イエベ">イエベ</option>
         <option value="ブルベ">ブルベ</option>
+        <option value="分からない">分からない</option>
     </select>
 
     <!-- 目の色 -->
-    <label for="eye">目の色</label>
+    <label for="eye">👀 目の色</label>
     <select id="eye">
         <option value="黒">黒</option>
         <option value="茶色">茶色</option>
     </select>
 
     <!-- 髪の色 -->
-    <label for="hairColor">髪の色</label>
+    <label for="hairColor">💇 髪の色</label>
     <select id="hairColor">
         <option value="黒">黒</option>
         <option value="茶色">茶色</option>
+        <option value="明るい茶色">明るい茶色</option>
         <option value="金">金</option>
     </select>
 
     <!-- 髪の長さ -->
-    <label for="hairLength">髪の長さ</label>
+    <label for="hairLength">✂️ 髪の長さ</label>
     <select id="hairLength">
         <option value="ショート">ショート</option>
         <option value="ミディアム">ミディアム</option>
         <option value="ロング">ロング</option>
     </select>
 
+    <!-- 肌の明るさ -->
+    <label for="skinTone">☀️ 肌の明るさ</label>
+    <select id="skinTone">
+        <option value="明るい">明るい</option>
+        <option value="普通">普通</option>
+        <option value="健康的">健康的</option>
+    </select>
+
+    <!-- 日焼け -->
+    <label for="sunburn">🌞 日焼けすると？</label>
+    <select id="sunburn">
+        <option value="赤くなる">赤くなる</option>
+        <option value="少し焼ける">少し焼ける</option>
+        <option value="黒くなる">黒くなる</option>
+    </select>
+
+    <!-- 目の大きさ -->
+    <label for="eyeSize">✨ 目の大きさ</label>
+    <select id="eyeSize">
+        <option value="大きい">大きい</option>
+        <option value="普通">普通</option>
+        <option value="小さい">小さい</option>
+    </select>
+
     <!-- 普段のファッション -->
-    <label for="fashion">普段のファッション</label>
+    <label for="fashion">👕 普段のファッション</label>
     <select id="fashion">
         <option value="カジュアル">カジュアル</option>
         <option value="きれいめ">きれいめ</option>
         <option value="韓国風">韓国風</option>
         <option value="ストリート">ストリート</option>
+        <option value="ガーリー">ガーリー</option>
     </select>
 
     <!-- なりたい雰囲気 -->
-    <label for="style">なりたい雰囲気</label>
+    <label for="style">🌸 なりたい雰囲気</label>
     <select id="style">
         <option value="かわいい">かわいい</option>
         <option value="かっこいい">かっこいい</option>
@@ -71,7 +102,9 @@
         <option value="ナチュラル">ナチュラル</option>
     </select>
 
-    <button onclick="diagnosis()">診断する</button>
+    <button onclick="diagnosis()">
+        💖 診断する
+    </button>
 
     <div id="result"></div>
 
