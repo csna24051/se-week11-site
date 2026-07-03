@@ -3,110 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>似合う服・髪型診断アプリ</title>
+    <title>Beauty Diagnosis App</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+<div class="background"></div>
+
 <div class="container">
 
-    <h1>💖 似合う服・髪型診断 💖</h1>
+    <header class="header">
+        <h1>🌸 Beauty Diagnosis 🌸</h1>
+        <p>10個の質問からあなたに似合うスタイルを診断します。</p>
+    </header>
 
-    <p class="subtitle">
-        10個の質問に答えて、あなたに似合うスタイルを診断します✨
-    </p>
+    <div class="card">
 
-    <!-- 顔の形 -->
-    <label for="face">😊 顔の形</label>
-    <select id="face">
-        <option value="丸顔">丸顔</option>
-        <option value="面長">面長</option>
-        <option value="卵型">卵型</option>
-        <option value="ベース型">ベース型</option>
-        <option value="逆三角形">逆三角形</option>
-    </select>
+        <form id="beautyForm">
 
-    <!-- 肌タイプ -->
-    <label for="skin">🎨 肌タイプ</label>
-    <select id="skin">
-        <option value="イエベ">イエベ</option>
-        <option value="ブルベ">ブルベ</option>
-        <option value="分からない">分からない</option>
-    </select>
+            <!-- 顔の形 -->
+            <div class="form-group">
+                <label>顔の形</label>
+                <select id="faceShape" required>
+                    <option value="">選択してください</option>
+                    <option value="round">丸顔</option>
+                    <option value="oval">卵型</option>
+                    <option value="long">面長</option>
+                    <option value="square">ベース型</option>
+                </select>
+            </div>
 
-    <!-- 目の色 -->
-    <label for="eye">👀 目の色</label>
-    <select id="eye">
-        <option value="黒">黒</option>
-        <option value="茶色">茶色</option>
-    </select>
+            <!-- 肌タイプ -->
+            <div class="form-group">
+                <label>肌タイプ</label>
+                <select id="skinType" required>
+                    <option value="">選択してください</option>
+                    <option value="dry">乾燥肌</option>
+                    <option value="normal">普通肌</option>
+                    <option value="oily">脂性肌</option>
+                    <option value="mixed">混合肌</option>
+                </select>
+            </div>
 
-    <!-- 髪の色 -->
-    <label for="hairColor">💇 髪の色</label>
-    <select id="hairColor">
-        <option value="黒">黒</option>
-        <option value="茶色">茶色</option>
-        <option value="明るい茶色">明るい茶色</option>
-        <option value="金">金</option>
-    </select>
+            <!-- 目の色 -->
+            <div class="form-group">
+                <label>目の色</label>
+                <select id="eyeColor" required>
+                    <option value="">選択してください</option>
+                    <option value="lightBrown">明るい茶色</option>
+                    <option value="brown">茶色</option>
+                    <option value="darkBrown">こげ茶</option>
+                    <option value="black">黒</option>
+                </select>
+            </div>
 
-    <!-- 髪の長さ -->
-    <label for="hairLength">✂️ 髪の長さ</label>
-    <select id="hairLength">
-        <option value="ショート">ショート</option>
-        <option value="ミディアム">ミディアム</option>
-        <option value="ロング">ロング</option>
-    </select>
+            <!-- 髪の色 -->
+            <div class="form-group">
+                <label>髪の色</label>
+                <select id="hairColor" required>
+                    <option value="">選択してください</option>
+                    <option value="light">明るめ</option>
+                    <option value="brown">ブラウン</option>
+                    <option value="dark">ダークブラウン</option>
+                    <option value="black">ブラック</option>
+                </select>
+            </div>
 
-    <!-- 肌の明るさ -->
-    <label for="skinTone">☀️ 肌の明るさ</label>
-    <select id="skinTone">
-        <option value="明るい">明るい</option>
-        <option value="普通">普通</option>
-        <option value="健康的">健康的</option>
-    </select>
+            <!-- 髪の長さ -->
+            <div class="form-group">
+                <label>髪の長さ</label>
+                <select id="hairLength" required>
+                    <option value="">選択してください</option>
+                    <option value="short">ショート</option>
+                    <option value="bob">ボブ</option>
+                    <option value="medium">ミディアム</option>
+                    <option value="long">ロング</option>
+                </select>
+            </div>
 
-    <!-- 日焼け -->
-    <label for="sunburn">🌞 日焼けすると？</label>
-    <select id="sunburn">
-        <option value="赤くなる">赤くなる</option>
-        <option value="少し焼ける">少し焼ける</option>
-        <option value="黒くなる">黒くなる</option>
-    </select>
+            <!-- 肌の明るさ -->
+            <div class="form-group">
+                <label>肌の明るさ</label>
+                <select id="skinTone" required>
+                    <option value="">選択してください</option>
+                    <option value="fair">明るい</option>
+                    <option value="normal">普通</option>
+                    <option value="dark">健康的</option>
+                </select>
+            </div>
 
-    <!-- 目の大きさ -->
-    <label for="eyeSize">✨ 目の大きさ</label>
-    <select id="eyeSize">
-        <option value="大きい">大きい</option>
-        <option value="普通">普通</option>
-        <option value="小さい">小さい</option>
-    </select>
+            <!-- 日焼け -->
+            <div class="form-group">
+                <label>日焼けしやすさ</label>
+                <select id="sunburn" required>
+                    <option value="">選択してください</option>
+                    <option value="hard">しにくい</option>
+                    <option value="normal">普通</option>
+                    <option value="easy">しやすい</option>
+                </select>
+            </div>
 
-    <!-- 普段のファッション -->
-    <label for="fashion">👕 普段のファッション</label>
-    <select id="fashion">
-        <option value="カジュアル">カジュアル</option>
-        <option value="きれいめ">きれいめ</option>
-        <option value="韓国風">韓国風</option>
-        <option value="ストリート">ストリート</option>
-        <option value="ガーリー">ガーリー</option>
-    </select>
+            <!-- 目の大きさ -->
+            <div class="form-group">
+                <label>目の大きさ</label>
+                <select id="eyeSize" required>
+                    <option value="">選択してください</option>
+                    <option value="small">小さめ</option>
+                    <option value="normal">普通</option>
+                    <option value="large">大きめ</option>
+                </select>
+            </div>
 
-    <!-- なりたい雰囲気 -->
-    <label for="style">🌸 なりたい雰囲気</label>
-    <select id="style">
-        <option value="かわいい">かわいい</option>
-        <option value="かっこいい">かっこいい</option>
-        <option value="大人っぽい">大人っぽい</option>
-        <option value="ナチュラル">ナチュラル</option>
-    </select>
+            <!-- ファッション -->
+            <div class="form-group">
+                <label>普段のファッション</label>
+                <select id="fashion" required>
+                    <option value="">選択してください</option>
+                    <option value="casual">カジュアル</option>
+                    <option value="feminine">フェミニン</option>
+                    <option value="cool">クール</option>
+                    <option value="natural">ナチュラル</option>
+                </select>
+            </div>
 
-    <button onclick="diagnosis()">
-        💖 診断する
-    </button>
+            <!-- なりたい雰囲気 -->
+            <div class="form-group">
+                <label>なりたい雰囲気</label>
+                <select id="style" required>
+                    <option value="">選択してください</option>
+                    <option value="cute">かわいい</option>
+                    <option value="elegant">きれいめ</option>
+                    <option value="cool">大人っぽい</option>
+                    <option value="natural">ナチュラル</option>
+                </select>
+            </div>
 
-    <div id="result"></div>
+            <div class="button-area">
+                <button type="submit" class="diagnose-btn">
+                    診断する
+                </button>
+
+                <button type="reset" class="reset-btn">
+                    リセット
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div id="resultCard" class="result-card hidden">
+
+        <h2>✨診断結果✨</h2>
+
+        <div class="result-item">
+            <span>🎨 パーソナルカラー</span>
+            <p id="personalColor"></p>
+        </div>
+
+        <div class="result-item">
+            <span>😊 顔タイプ</span>
+            <p id="faceType"></p>
+        </div>
+
+        <div class="result-item">
+            <span>💇 おすすめの髪型</span>
+            <p id="hairStyle"></p>
+        </div>
+
+        <div class="result-item">
+            <span>👗 おすすめの服装</span>
+            <p id="fashionResult"></p>
+        </div>
+
+        <div class="result-item">
+            <span>🌈 似合う色</span>
+            <p id="bestColor"></p>
+        </div>
+
+        <div class="result-item">
+            <span>💖 アドバイス</span>
+            <p id="advice"></p>
+        </div>
+
+    </div>
 
 </div>
 

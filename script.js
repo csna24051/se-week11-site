@@ -1,9 +1,25 @@
-function diagnosis() {
+// ==========================
+// Beauty Diagnosis App
+// script.js（前半）
+// ==========================
 
-    // ===== 入力値の取得 =====
-    const face = document.getElementById("face").value;
-    const skin = document.getElementById("skin").value;
-    const eye = document.getElementById("eye").value;
+const form = document.getElementById("beautyForm");
+const resultCard = document.getElementById("resultCard");
+
+const personalColorText = document.getElementById("personalColor");
+const faceTypeText = document.getElementById("faceType");
+const hairStyleText = document.getElementById("hairStyle");
+const fashionResultText = document.getElementById("fashionResult");
+const bestColorText = document.getElementById("bestColor");
+const adviceText = document.getElementById("advice");
+
+form.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    const faceShape = document.getElementById("faceShape").value;
+    const skinType = document.getElementById("skinType").value;
+    const eyeColor = document.getElementById("eyeColor").value;
     const hairColor = document.getElementById("hairColor").value;
     const hairLength = document.getElementById("hairLength").value;
     const skinTone = document.getElementById("skinTone").value;
@@ -12,12 +28,11 @@ function diagnosis() {
     const fashion = document.getElementById("fashion").value;
     const style = document.getElementById("style").value;
 
-    // ===== 診断結果を入れる変数 =====
     let personalColor = "";
     let faceType = "";
-    let hair = "";
-    let clothes = "";
-    let color = "";
+    let hairStyle = "";
+    let fashionResult = "";
+    let bestColor = "";
     let advice = "";
 
     // ==========================
@@ -25,37 +40,33 @@ function diagnosis() {
     // ==========================
 
     if (
-        (skin === "イエベ" || skin === "分からない") &&
-        skinTone === "明るい" &&
-        sunburn === "赤くなる"
+        (skinTone === "fair" && eyeColor === "lightBrown") ||
+        (hairColor === "light" && sunburn === "easy")
     ) {
 
-        personalColor = "イエベ春";
-        color = "アイボリー・コーラルピンク・ベージュ・ライトグリーン";
+        personalColor = "🌼 イエベ春";
+        bestColor = "コーラルピンク・アイボリー・ライトベージュ・ミントグリーン";
 
-    }
-    else if (
-        (skin === "ブルベ" || skin === "分からない") &&
-        skinTone === "明るい"
+    } else if (
+        (skinTone === "fair" && eyeColor === "black") ||
+        (hairColor === "black" && sunburn === "hard")
     ) {
 
-        personalColor = "ブルベ夏";
-        color = "ラベンダー・ライトグレー・ネイビー・ローズピンク";
+        personalColor = "❄️ ブルベ冬";
+        bestColor = "ロイヤルブルー・ブラック・ワインレッド・ホワイト";
 
-    }
-    else if (
-        skinTone === "健康的" &&
-        sunburn === "黒くなる"
+    } else if (
+        (skinTone === "dark") ||
+        (hairColor === "dark")
     ) {
 
-        personalColor = "イエベ秋";
-        color = "カーキ・ブラウン・マスタード・テラコッタ";
+        personalColor = "🍁 イエベ秋";
+        bestColor = "カーキ・マスタード・ブラウン・テラコッタ";
 
-    }
-    else {
+    } else {
 
-        personalColor = "ブルベ冬";
-        color = "ブラック・ホワイト・ワインレッド・ロイヤルブルー";
+        personalColor = "🌸 ブルベ夏";
+        bestColor = "ラベンダー・ローズピンク・スカイブルー・グレー";
 
     }
 
@@ -64,158 +75,184 @@ function diagnosis() {
     // ==========================
 
     if (
-        face === "丸顔" &&
-        eyeSize === "大きい"
+        faceShape === "round" &&
+        eyeSize === "large"
     ) {
 
         faceType = "キュート";
 
-    }
-    else if (
-        face === "卵型"
+    } else if (
+        faceShape === "oval"
     ) {
 
         faceType = "フレッシュ";
 
-    }
-    else if (
-        face === "面長"
+    } else if (
+        faceShape === "long"
     ) {
 
         faceType = "フェミニン";
 
-    }
-    else {
+    } else {
 
         faceType = "クール";
 
     }
 
-        // ==========================
-    // おすすめの髪型
+    // ==========================
+    // 髪型診断
     // ==========================
 
     if (faceType === "キュート") {
 
-        hair = "ショートボブ・内巻きボブ・シースルーバング";
+        hairStyle = "丸みショート・ふんわりボブ・シースルーバング";
 
-    }
-    else if (faceType === "フレッシュ") {
+    } else if (faceType === "フレッシュ") {
 
-        hair = "くびれミディアム・外ハネボブ・レイヤーカット";
+        hairStyle = "外ハネボブ・ミディアムレイヤー・ナチュラルヘア";
 
-    }
-    else if (faceType === "フェミニン") {
+    } else if (faceType === "フェミニン") {
 
-        hair = "ロングレイヤー・韓国風巻き髪・ゆるふわパーマ";
+        hairStyle = "韓国風ロング・ゆる巻き・くびれヘア";
 
-    }
-    else {
+    } else {
 
-        hair = "センターパート・ストレートロング・ハンサムショート";
+        hairStyle = "センターパート・ストレートロング・ハンサムショート";
 
     }
 
     // ==========================
-    // おすすめの服装
+    // ファッション診断
     // ==========================
 
-    if (fashion === "韓国風") {
+    if (style === "cute") {
 
-        clothes = "オーバーサイズジャケット・ワイドパンツ・白スニーカー";
+        fashionResult = "フレアスカート・パステルカラー・リボンアイテム";
 
-    }
-    else if (fashion === "ガーリー") {
+    } else if (style === "elegant") {
 
-        clothes = "ワンピース・カーディガン・プリーツスカート";
+        fashionResult = "ブラウス・タイトスカート・ワンピース";
 
-    }
-    else if (fashion === "きれいめ") {
+    } else if (style === "cool") {
 
-        clothes = "ブラウス・テーパードパンツ・パンプス";
+        fashionResult = "ジャケット・モノトーン・スラックス";
 
-    }
-    else if (fashion === "ストリート") {
+    } else {
 
-        clothes = "カーゴパンツ・パーカー・スニーカー";
-
-    }
-    else {
-
-        clothes = "デニム・Tシャツ・スニーカー";
+        fashionResult = "ニット・デニム・シンプルコーデ";
 
     }
 
-    // ==========================
-    // 雰囲気別アドバイス
+        // ==========================
+    // アドバイス診断
     // ==========================
 
-    if (style === "かわいい") {
+    if (personalColor.includes("イエベ春")) {
 
-        advice = "ピンク系やパステルカラーを取り入れると、さらに魅力が引き立ちます。";
+        advice =
+            "明るく透明感のある色が魅力を引き立てます。ツヤ感のあるメイクやコーラル系のリップがおすすめです。";
 
-    }
-    else if (style === "かっこいい") {
+    } else if (personalColor.includes("ブルベ夏")) {
 
-        advice = "ブラックやネイビーなど、落ち着いた色を使うと大人っぽい印象になります。";
+        advice =
+            "やわらかく上品なカラーがよく似合います。青みピンクのメイクやラベンダーカラーを取り入れてみましょう。";
 
-    }
-    else if (style === "大人っぽい") {
+    } else if (personalColor.includes("イエベ秋")) {
 
-        advice = "シンプルなデザインと上品なカラーがおすすめです。";
+        advice =
+            "深みのあるアースカラーが魅力を引き出します。マットな質感のメイクやブラウン系のアイテムがおすすめです。";
 
-    }
-    else {
+    } else {
 
-        advice = "ナチュラルカラーで優しい雰囲気を演出しましょう。";
+        advice =
+            "コントラストのあるはっきりした色がよく似合います。ブラックやワインレッドをアクセントにすると印象的です。";
 
     }
 
     // ==========================
-    // 診断結果表示
+    // 普段のファッションに応じて追加アドバイス
     // ==========================
 
-    document.getElementById("result").innerHTML = `
+    switch (fashion) {
 
-        <h2>🌸 診断結果 🌸</h2>
+        case "casual":
+            advice += " カジュアルコーデには白スニーカーやシンプルなアクセサリーを合わせるとよりおしゃれに見えます。";
+            break;
 
-        <hr>
+        case "feminine":
+            advice += " レースやパールなど上品な小物を取り入れると、女性らしさがさらに引き立ちます。";
+            break;
 
-        <h3>🎨 パーソナルカラー</h3>
-        <p>${personalColor}</p>
+        case "cool":
+            advice += " シルバーアクセサリーやモノトーンアイテムを取り入れると洗練された印象になります。";
+            break;
 
-        <h3>😊 顔タイプ</h3>
-        <p>${faceType}</p>
+        case "natural":
+            advice += " ベージュやアイボリーなど自然な色味を選ぶと、やさしい雰囲気を演出できます。";
+            break;
 
-        <h3>💇 おすすめの髪型</h3>
-        <p>${hair}</p>
+    }
 
-        <h3>👕 おすすめの服装</h3>
-        <p>${clothes}</p>
+    // ==========================
+    // 現在の髪の長さに合わせたコメント
+    // ==========================
 
-        <h3>🌈 似合う色</h3>
-        <p>${color}</p>
+    if (hairLength === "short") {
 
-        <h3>💡 ワンポイントアドバイス</h3>
-        <p>${advice}</p>
+        hairStyle += "。トップにボリュームを出すとバランスが良く見えます。";
 
-        <hr>
+    } else if (hairLength === "bob") {
 
-        <h3>📋 あなたの診断内容</h3>
+        hairStyle += "。毛先を軽く巻くと柔らかい印象になります。";
 
-        <p>
-        顔の形：${face}<br>
-        肌タイプ：${skin}<br>
-        目の色：${eye}<br>
-        髪の色：${hairColor}<br>
-        髪の長さ：${hairLength}<br>
-        肌の明るさ：${skinTone}<br>
-        日焼け：${sunburn}<br>
-        目の大きさ：${eyeSize}<br>
-        普段のファッション：${fashion}<br>
-        なりたい雰囲気：${style}
-        </p>
+    } else if (hairLength === "medium") {
 
-    `;
+        hairStyle += "。レイヤーを入れると動きが出て華やかになります。";
 
-}
+    } else {
+
+        hairStyle += "。ゆるく巻くと女性らしい印象がさらにアップします。";
+
+    }
+
+    // ==========================
+    // 結果表示
+    // ==========================
+
+    personalColorText.textContent = personalColor;
+    faceTypeText.textContent = faceType;
+    hairStyleText.textContent = hairStyle;
+    fashionResultText.textContent = fashionResult;
+    bestColorText.textContent = bestColor;
+    adviceText.textContent = advice;
+
+    resultCard.classList.remove("hidden");
+    resultCard.classList.add("show");
+
+    resultCard.scrollIntoView({
+        behavior: "smooth"
+    });
+
+});
+
+// ==========================
+// リセット
+// ==========================
+
+form.addEventListener("reset", function () {
+
+    setTimeout(() => {
+
+        resultCard.classList.remove("show");
+        resultCard.classList.add("hidden");
+
+        personalColorText.textContent = "";
+        faceTypeText.textContent = "";
+        hairStyleText.textContent = "";
+        fashionResultText.textContent = "";
+        bestColorText.textContent = "";
+        adviceText.textContent = "";
+
+    }, 100);
+
+});
