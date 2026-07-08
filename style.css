@@ -345,3 +345,33 @@ button:active{
     }
 
 }
+
+/* ==========================
+   おすすめショップ
+========================== */
+
+#cosmeticLinks,
+#fashionLinks{
+    margin-top:10px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.shop-link{
+    display:inline-block;
+    background:linear-gradient(90deg,#ff8fb7,#ff5f95);
+    color:white;
+    padding:10px 18px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+    box-shadow:0 5px 15px rgba(255,105,180,.2);
+}
+
+.shop-link:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(255,105,180,.35);
+    background:linear-gradient(90deg,#ff6da5,#ff4f8b);
+}

@@ -12,6 +12,8 @@ const hairStyleText = document.getElementById("hairStyle");
 const fashionResultText = document.getElementById("fashionResult");
 const bestColorText = document.getElementById("bestColor");
 const adviceText = document.getElementById("advice");
+const cosmeticLinks = document.getElementById("cosmeticLinks");
+const fashionLinks = document.getElementById("fashionLinks");
 
 form.addEventListener("submit", function (e) {
 
@@ -218,6 +220,61 @@ form.addEventListener("submit", function (e) {
     // ==========================
     // 結果表示
     // ==========================
+
+    // ==========================
+// おすすめショップ表示
+// ==========================
+
+if (personalColor.includes("イエベ春")) {
+
+    cosmeticLinks.innerHTML = `
+        <a class="shop-link" href="https://www.canmake.com/" target="_blank">CANMAKE</a>
+        <a class="shop-link" href="https://www.cezanne.co.jp/" target="_blank">CEZANNE</a>
+    `;
+
+    fashionLinks.innerHTML = `
+        <a class="shop-link" href="https://www.gu-global.com/jp/ja/" target="_blank">GU</a>
+        <a class="shop-link" href="https://www.uniqlo.com/jp/ja/" target="_blank">UNIQLO</a>
+    `;
+
+} else if (personalColor.includes("ブルベ夏")) {
+
+    cosmeticLinks.innerHTML = `
+        <a class="shop-link" href="https://www.canmake.com/" target="_blank">CANMAKE</a>
+        <a class="shop-link" href="https://www.cezanne.co.jp/" target="_blank">CEZANNE</a>
+        <a class="shop-link" href="https://www.etvos.com/" target="_blank">ETVOS</a>
+    `;
+
+    fashionLinks.innerHTML = `
+        <a class="shop-link" href="https://zozo.jp/" target="_blank">ZOZOTOWN</a>
+        <a class="shop-link" href="https://www.gu-global.com/jp/ja/" target="_blank">GU</a>
+    `;
+
+} else if (personalColor.includes("イエベ秋")) {
+
+    cosmeticLinks.innerHTML = `
+        <a class="shop-link" href="https://www.nomorerules.net/" target="_blank">KATE</a>
+        <a class="shop-link" href="https://www.visee.jp/" target="_blank">Visée</a>
+    `;
+
+    fashionLinks.innerHTML = `
+        <a class="shop-link" href="https://globalwork.jp/" target="_blank">GLOBAL WORK</a>
+        <a class="shop-link" href="https://www.nikoand.jp/" target="_blank">niko and ...</a>
+    `;
+
+} else {
+
+    cosmeticLinks.innerHTML = `
+        <a class="shop-link" href="https://www.visee.jp/" target="_blank">Visée</a>
+        <a class="shop-link" href="https://maquillage.shiseido.co.jp/" target="_blank">MAQuillAGE</a>
+    `;
+
+    fashionLinks.innerHTML = `
+        <a class="shop-link" href="https://www.zara.com/jp/" target="_blank">ZARA</a>
+        <a class="shop-link" href="https://www2.hm.com/ja_jp/" target="_blank">H&M</a>
+    `;
+
+}
 
     personalColorText.textContent = personalColor;
     faceTypeText.textContent = faceType;
