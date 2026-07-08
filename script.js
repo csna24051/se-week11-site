@@ -14,6 +14,13 @@ const bestColorText = document.getElementById("bestColor");
 const adviceText = document.getElementById("advice");
 const cosmeticLinks = document.getElementById("cosmeticLinks");
 const fashionLinks = document.getElementById("fashionLinks");
+const scoreText = document.getElementById("score");
+const makeupText = document.getElementById("makeup");
+const avoidColorText = document.getElementById("avoidColor");
+const luckyColorText = document.getElementById("luckyColor");
+
+const saveBtn = document.getElementById("saveBtn");
+const imageBtn = document.getElementById("imageBtn");
 
 form.addEventListener("submit", function (e) {
 
@@ -36,6 +43,10 @@ form.addEventListener("submit", function (e) {
     let fashionResult = "";
     let bestColor = "";
     let advice = "";
+    let score = "";
+    let makeup = "";
+    let avoidColor = "";
+    let luckyColor = "";
 
     // ==========================
     // パーソナルカラー診断
@@ -222,6 +233,40 @@ form.addEventListener("submit", function (e) {
     // ==========================
 
     // ==========================
+// 総合評価・メイク・NGカラー
+// ==========================
+
+if (personalColor.includes("イエベ春")) {
+
+    score = "★★★★★（95点）";
+    makeup = "コーラル系アイシャドウ・オレンジチーク・コーラルリップ";
+    avoidColor = "ブラック・ネイビー";
+    luckyColor = "🌼 コーラルピンク";
+
+} else if (personalColor.includes("ブルベ夏")) {
+
+    score = "★★★★★（96点）";
+    makeup = "ラベンダーアイシャドウ・ローズチーク・青みピンクリップ";
+    avoidColor = "オレンジ・マスタード・カーキ";
+    luckyColor = "💜 ラベンダー";
+
+} else if (personalColor.includes("イエベ秋")) {
+
+    score = "★★★★☆（90点）";
+    makeup = "ブラウンアイシャドウ・テラコッタチーク・ブラウンリップ";
+    avoidColor = "パステルカラー";
+    luckyColor = "🤎 テラコッタ";
+
+} else {
+
+    score = "★★★★★（94点）";
+    makeup = "グレージュアイシャドウ・ローズチーク・ワインリップ";
+    avoidColor = "黄みの強いオレンジ";
+    luckyColor = "💙 ロイヤルブルー";
+
+}
+
+    // ==========================
 // おすすめショップ表示
 // ==========================
 
@@ -282,6 +327,10 @@ if (personalColor.includes("イエベ春")) {
     fashionResultText.textContent = fashionResult;
     bestColorText.textContent = bestColor;
     adviceText.textContent = advice;
+    scoreText.textContent = score;
+    makeupText.textContent = makeup;
+    avoidColorText.textContent = avoidColor;
+    luckyColorText.textContent = luckyColor;
 
     resultCard.classList.remove("hidden");
     resultCard.classList.add("show");
@@ -309,7 +358,49 @@ form.addEventListener("reset", function () {
         fashionResultText.textContent = "";
         bestColorText.textContent = "";
         adviceText.textContent = "";
+        scoreText.textContent = "";
+        makeupText.textContent = "";
+        avoidColorText.textContent = "";
+        luckyColorText.textContent = "";
+        cosmeticLinks.innerHTML = "";
+        fashionLinks.innerHTML = "";
 
     }, 100);
+
+});
+
+// ==========================
+// 保存機能
+// ==========================
+
+saveBtn.addEventListener("click", function () {
+
+    const result = `
+【診断結果】
+
+パーソナルカラー：${personalColorText.textContent}
+
+顔タイプ：${faceTypeText.textContent}
+
+おすすめ髪型：${hairStyleText.textContent}
+
+おすすめ服装：${fashionResultText.textContent}
+
+総合評価：${scoreText.textContent}
+`;
+
+    localStorage.setItem("beautyResult", result);
+
+    alert("診断結果を保存しました！");
+
+});
+
+// ==========================
+// 画像保存（印刷画面）
+// ==========================
+
+imageBtn.addEventListener("click", function () {
+
+    window.print();
 
 });
